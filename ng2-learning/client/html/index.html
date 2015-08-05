@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Angular 2 Quickstart</title>
+    <script src="https://github.jspm.io/jmcriffey/bower-traceur-runtime@0.0.87/traceur-runtime.js"></script>
+    <script src="https://jspm.io/system@0.16.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.31/angular2.dev.js">
+    </script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.31/router.dev.js"></script>
+
+    <script src="../lib/jquery/js/jquery.js"></script>
+    <script src="../lib/jquery-ui/js/jquery-ui.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap-theme.css">
+
+    <link rel="stylesheet" href="../css/app.css">
+  </head>
+  <body>
+  
+    <!-- The app component created in app.ts -->
+    <my-app></my-app>
+    <script>
+    System.baseURL = '/client/';
+    System.import('app');</script>
+  </body>
+</html>

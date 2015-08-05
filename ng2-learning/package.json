@@ -1,0 +1,24 @@
+{
+  "name": "learning_ng2",
+  "version": "1.0.0",
+  "description": "A project to learn angular 2.0.",
+  "main": "client/app.js",
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "express": "^4.13.1",
+    "gulp": "^3.9.0",
+    "gulp-tsd": "0.0.4",
+    "http": "0.0.0",
+    "http-server": "^0.8.0",
+    "jquery": "^2.1.4",
+    "jquery-ui": "^1.10.5",
+    "tsd": "^0.6.3",
+    "typescript": "^1.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gahlotnikhil",
+  "license": "ISC"
+}

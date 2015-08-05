@@ -1,0 +1,15 @@
+<div *ng-if="ready == true">
+    <div style="padding: 60px; height: 100%; padding-top: 30px;">
+      <div style="height: 100%;">
+        <div>
+            <menu [items]="menuItems" style="padding: 0px;">
+            </menu>
+        </div>
+        <div style="margin: 20px; height: 100%;">
+          
+          <router-outlet></router-outlet>  
+
+       </div>
+     </div>
+    </div>
+</div>

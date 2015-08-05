@@ -1,0 +1,25 @@
+<div>
+	<h2>{{ name }}</h2>
+		
+	<ul class="list-group" sortable (on-sort)="onSortFn($event)">
+		<li *ng-for="#todo of tasks" class="list-group-item task">
+			<div class="row">
+				<div class="col-md-1">
+					<i class="glyphicon glyphicon-ok"></i>
+				</div>
+				<div class="col-md-10">
+					<span>{{ todo }}</span>
+				</div>
+				<div class="col-md-1">
+						<i (click)="removeTask(todo)" class="link glyphicon glyphicon-remove-circle">
+						</i>
+				</div>
+			</div>
+		</li>
+	</ul>
+
+	<div class="note-div">
+		<input #todotext (keyup)="doneTyping($event, false)">
+	</div>
+
+</div>

@@ -1,0 +1,34 @@
+<div *ng-if="!showTaskView" class="container">
+	<h4>Task Subject list: </h4>
+	<div class="row show-grid">
+		<div class="col-sm-8">
+			<ul class="list-group">
+				<li *ng-for="#subject of subjects" class="list-group-item">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-11">
+								<a class="link" (click)="openTaskView(subject)">{{ subject.name }}</a>
+							</div>
+							<div class="col-md-1">
+									<i (click)="removeSubject(subject)" class="link glyphicon glyphicon-remove-circle"></i>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="note-div">
+		<input #subjecttext (keyup)="doneTyping($event, true)">
+	</div>
+</div>
+
+<div *ng-if="showTaskView">
+	<div>
+		<a class="link" (click)="goBack()">
+			<span class="glyphicon glyphicon-step-backward"></span>
+			Go back
+		</a>
+	</div>
+	<content></content>
+</div>

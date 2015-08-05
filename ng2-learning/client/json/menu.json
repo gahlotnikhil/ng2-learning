@@ -1,0 +1,56 @@
+[
+	{
+		"component": "home",
+		"path": "/",
+		"as": "home"
+	},
+	{
+		"component": "showcase",
+		"path": "/showcase/...",
+		"as": "showcase",
+		"sub-menu": [
+        	{
+				"path": "/gridComponent",
+				"component": "gridComponent",
+				"as": "gridComponent"
+			},
+			{
+				"path": "/listComponent",
+				"component": "listComponent",
+				"as": "listComponent"
+			},
+			{
+				"path": "/dialogComponent",
+				"component": "dialogComponent",
+				"as": "dialogComponent"
+			},
+			{
+	            "component": "subMenu2",
+	            "path": "/subMenu2",
+	            "as": "subMenu2"
+        	}
+		]
+	},
+	{
+		"component": "applications",
+		"path": "/applications/...",
+		"as": "applications",
+		"sub-menu": [
+			{
+	            "component": "calendar",
+	            "path": "/calendar",
+	            "as": "calendar"
+        	},
+        	{
+	            "component": "todo",
+	            "path": "/todo",
+	            "as": "todo"
+        	}
+		]
+	},
+	{
+		"component": "about",
+		"path": "/about",
+		"as": "about"
+	}
+]
