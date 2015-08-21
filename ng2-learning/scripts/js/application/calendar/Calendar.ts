@@ -1,4 +1,4 @@
-import {Component, View} from 'angular2/angular2';
+import {Component, View, Inject, ElementRef} from 'angular2/angular2';
 
 @Component({
     selector: 'calendar'
@@ -6,16 +6,32 @@ import {Component, View} from 'angular2/angular2';
 
 @View({
     template: `
-    <div class="container">
-        Calendar component:
-	    <p>
-	        Coming soon!
-	    </p>
+    
+    <div>
+        <p>Calendar component:</p>
+	    
+        <div class="calendar" id="calendar">
+        </div>
 	</div>
     `
 })
 
 export class Calendar {
-    constructor() {
+    private calendarElem: ElementRef;
+
+    constructor(@Inject(ElementRef) elementRef: ElementRef) {
+        var el = jQuery(elementRef.nativeElement);
+
+        this.calendarElem = el.find('#calendar');
+
+        this.calendarElem.fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,basicWeek,basicDay'
+            },
+            editable: true,
+            eventLimit: true
+        })
     }
 }

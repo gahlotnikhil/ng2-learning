@@ -1,11 +1,11 @@
-import {Ancestor, Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
+import {Host, Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 import {TaskSubjectsView} from 'js/application/todo/TaskSubjectsView';
 import {Sortable} from 'js/widget/Sortable';
 
 
 @Component({
   selector: 'task-subject',
-  viewInjector: [TaskSubjectsView]
+  //bindings: [TaskSubjectsView]
 })
 @View({
   templateUrl: '../html/application/todo/task.html',
@@ -17,7 +17,7 @@ export class TaskView {
   
   private taskSubjectsView: TaskSubjectsView;
 
-  constructor( @Ancestor() parentView: TaskSubjectsView) {
+  constructor( @Host() parentView: TaskSubjectsView) {
     this.taskSubjectsView = parentView;
   }
 

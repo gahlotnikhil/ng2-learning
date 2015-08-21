@@ -7,6 +7,7 @@ import {ToDo} from 'js/application/todo/ToDo';
 import {Calendar} from 'js/application/calendar/Calendar';
 
 import {Forms} from 'js/form/Forms';
+import {FormExample1} from 'js/form/FormExample1';
 
 import {Showcase} from 'js/showcase/Showcase';
 import {DialogComponent} from 'js/showcase/DialogComponent';
@@ -24,6 +25,7 @@ export class AllComponents {
         "calendar": Calendar,
 
         "forms" : Forms,
+        "formExample1": FormExample1,
 
         "showcase": Showcase,
         "subMenu2": SubMenu2,

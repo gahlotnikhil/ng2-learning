@@ -3,7 +3,7 @@ import {EventEmitter, Inject, Directive, ElementRef} from 'angular2/angular2';
 @Directive({
 	selector: '[sortable]',
 	events: ['sortFn: onSort'],
-	hostInjector: [EventEmitter]
+	bindings: [EventEmitter]
 })
 
 export class Sortable {
@@ -15,7 +15,6 @@ export class Sortable {
 		var self = this;
 		this.sortFn = _sortFn;
 		this.el = jQuery(elementRef.nativeElement);
-		//var t = DOM;
 
 		this.el.sortable({
 			start: function(e, ui) {

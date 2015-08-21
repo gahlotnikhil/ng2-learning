@@ -1,4 +1,5 @@
 import {Component, View} from 'angular2/angular2';
+import {List} from 'js/widget/List';
 
 @Component({
     selector: 'list-component'
@@ -8,11 +9,11 @@ import {Component, View} from 'angular2/angular2';
     template: `
     <div class="container">
         List component:
-	    <p>
-	        Coming soon!
-	    </p>
+
+        <list></list>
 	</div>
-    `
+    `,
+    directives: [List]
 })
 
 export class ListComponent {

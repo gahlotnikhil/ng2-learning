@@ -19,11 +19,11 @@ export class NavigationService {
   }
 
   private transformToRouteItem(configItem, subItems): RouteItem {
-    var routeItem = new RouteItem(configItem.component, configItem.name, configItem.as, configItem.path);
+    var routeItem = new RouteItem(configItem.component, configItem.name, configItem.as, configItem.path, configItem.label);
 
     if (subItems != undefined) {
       subItems.forEach(item => {
-      routeItem.addChildRoute(new RouteItem(AllComponents.components[item.component], item.component, item.as, item.path));
+      routeItem.addChildRoute(new RouteItem(AllComponents.components[item.component], item.component, item.as, item.path, item.label));
       });
     }
     return routeItem;
@@ -36,7 +36,7 @@ export class NavigationService {
       list.forEach(item => {
           var rlink = routeItem.as + '/' + item.as;
           var rpath = routeItem.path.slice(0, routeItem.path.indexOf('.') - 1) + item.path;
-          childItems.push(new RouteItem(item.component, item.name, rlink, rpath));
+          childItems.push(new RouteItem(item.component, item.name, rlink, rpath, item.label));
       });
 
     return childItems;
@@ -77,6 +77,10 @@ export class NavigationService {
             }
             if (item.as) {
               configObj['as'] = item.as;
+            }
+
+            if (item.label) {
+              configObj['label'] = item.label;
             }
 
             this.configData.push(this.transformToRouteItem(configObj, item['sub-menu']))

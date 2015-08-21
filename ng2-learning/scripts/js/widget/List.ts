@@ -1,16 +1,16 @@
-import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor, Inject, ElementRef, ComponentRef} from 'angular2/angular2';
 
 @Component({
     selector: 'list',
-    properties: ['listItems: list-items'],
-    host: { 'itemVar': 'itemVar'}
+    // properties: ['listItems: list-items'],
+    // host: { 'itemVar': 'itemVar'}
+    //viewBindings: [ComponentRef],
 })
 
 @View({
 	//templateUrl: '../html/widget/list.html',
 		template: `
     <div class="container">
-        List view:
 	    <p>
 	        Coming soon!
 	    </p>
@@ -23,7 +23,7 @@ export class List {
 	itemVar: string;
     listItems;
 
-    constructor() {
+    constructor( @Inject(ElementRef) elementRef: ElementRef) {
         //this.sorter = new Sorter();
         //this.itemVar = '#' + this.itemVar + ' of listItems';
         //{ { itemVar } } of listItems\

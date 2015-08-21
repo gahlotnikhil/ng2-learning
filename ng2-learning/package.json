@@ -6,6 +6,7 @@
   "dependencies": {
     "bootstrap": "^3.3.5",
     "express": "^4.13.1",
+    "fullcalendar": "^2.3.1",
     "gulp": "^3.9.0",
     "gulp-tsd": "0.0.4",
     "http": "0.0.0",

@@ -57,7 +57,7 @@ var TaskAppComponent = (function () {
                 if (defaultChild) {
                     rlink = rlink + '/' + defaultChild.as;
                 }
-                _this.menuItems.push(new RouteItem_1.RouteItem(item.component, item.name, rlink, rpath));
+                _this.menuItems.push(new RouteItem_1.RouteItem(item.component, item.name, rlink, rpath, item.label));
             });
             _this.ready = true;
         });

@@ -4,7 +4,7 @@ import {TaskService} from 'js/service/TaskService';
 
 @Component({
   selector: 'task-subjects',
-  viewInjector: [TaskService]
+  bindings: [TaskService]
 })
 @View({
   templateUrl: '../html/application/todo/taskSubjects.html',

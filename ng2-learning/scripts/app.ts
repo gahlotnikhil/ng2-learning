@@ -66,7 +66,7 @@ class TaskAppComponent {
 					rlink = rlink + '/' + defaultChild.as;
 					//rpath = item.path.slice(0, item.path.indexOf('.') - 1);
 				}
-				this.menuItems.push(new RouteItem(item.component, item.name, rlink, rpath));
+				this.menuItems.push(new RouteItem(item.component, item.name, rlink, rpath, item.label));
 
 			});
 

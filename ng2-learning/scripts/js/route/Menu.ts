@@ -16,7 +16,7 @@ import {RouteItem} from 'js/model/RouteItem';
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
                 <li *ng-for="#item of items" [class.active]="isSelected(item.path)" style="margin: 5px;">
-                    <a [router-link]="getLink(item.as)" class="link">{{item.name}}</a>
+                    <a [router-link]="getLink(item.as)" class="link">{{item.label}}</a>
                 </li>
                 </ul>
             </div>

@@ -2,55 +2,73 @@
 	{
 		"component": "home",
 		"path": "/",
-		"as": "home"
+		"as": "home",
+		"label": "Home"
 	},
 	{
 		"component": "showcase",
 		"path": "/showcase/...",
 		"as": "showcase",
+		"label": "Showcase",
 		"sub-menu": [
         	{
 				"path": "/gridComponent",
 				"component": "gridComponent",
-				"as": "gridComponent"
+				"as": "gridComponent",
+				"label": "Grid Component"
 			},
 			{
 				"path": "/listComponent",
 				"component": "listComponent",
-				"as": "listComponent"
+				"as": "listComponent",
+				"label": "List Component"
 			},
 			{
 				"path": "/dialogComponent",
 				"component": "dialogComponent",
-				"as": "dialogComponent"
-			},
-			{
-	            "component": "subMenu2",
-	            "path": "/subMenu2",
-	            "as": "subMenu2"
-        	}
+				"as": "dialogComponent",
+				"label": "Dialog Component"
+			}
 		]
 	},
 	{
 		"component": "applications",
 		"path": "/applications/...",
 		"as": "applications",
+		"label": "Applications",
 		"sub-menu": [
 			{
 	            "component": "calendar",
 	            "path": "/calendar",
-	            "as": "calendar"
+	            "as": "calendar",
+				"label": "Calendar"
         	},
         	{
 	            "component": "todo",
 	            "path": "/todo",
-	            "as": "todo"
+	            "as": "todo",
+				"label": "Todo"
+        	}
+		]
+	},
+	{
+		"component": "forms",
+		"path": "/forms/...",
+		"as": "forms",
+		"label": "Forms",
+		"sub-menu": [
+			{
+	            "component": "formExample1",
+	            "path": "/formExample1",
+	            "as": "formExample1",
+				"label": "Form Example 1"
         	}
 		]
 	},
 	{
 		"component": "about",
 		"path": "/about",
-		"as": "about"
+		"as": "about",
+		"label": "About"
 	}
 ]

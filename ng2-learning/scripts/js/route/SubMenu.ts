@@ -14,7 +14,7 @@ import {RouteItem} from 'js/model/RouteItem';
     template: `
     <ul class="nav nav-pills nav-stacked" style="border-radius: 6px;  border: 1px solid rgb(229, 229, 229);">
         <li *ng-for="#item of items" [class.active]="isSelected(item.path)">
-            <a [router-link]="getLink(item.as)" class="link">{{item.name}}</a>
+            <a [router-link]="getLink(item.as)" class="link">{{item.label}}</a>
         </li>
     </ul>
     `,
