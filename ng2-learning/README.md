@@ -2,15 +2,14 @@ Angular 2.0 learning project
 =============================
 
 1.  Install
-	*  chmod 777 ./install.sh
-	*  ./install.sh
+	*  chmod 777 ./install.sh (unix/mac)
+	*  ./install.sh (unix/mac)
+	*  ./install.bat (windows)
 
 2.  Start Type script compiler
-	*  chmod 777 ./startTSC.sh
-	*  ./startTSC.sh
+	*  npm run tsc
 
 3.  Start server
-	*  chmod 777 ./startServer.sh
-	*  ./startServer.sh
+	*  npm start
 
-4.	Open http://localhost:8080/client/html/ in browser to view the application.
+4.	Open http://localhost:8080 in browser to view the application.
