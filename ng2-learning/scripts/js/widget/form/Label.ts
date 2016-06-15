@@ -1,4 +1,4 @@
-import {Component, View, NgIf} from 'angular2/angular2';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'label',
@@ -10,19 +10,15 @@ import {Component, View, NgIf} from 'angular2/angular2';
     host: {
         'class': 'col-sm-2 control-label',
         '[htmlFor]': 'for'
-    }
-})
-
-@View({
+    },
     template: `
-        <span *ng-if="value == undefined">
+        <span *ngIf="value == undefined">
             <ng-content></ng-content>
         </span>
-        <span *ng-if="value != undefined">
+        <span *ngIf="value != undefined">
             {{value}}
         </span>
-    `,
-    directives: [NgIf]
+    `
 })
 
 export class Label {

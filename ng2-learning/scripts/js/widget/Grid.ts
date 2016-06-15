@@ -1,27 +1,24 @@
-import {Component, View, NgFor} from 'angular2/angular2';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'grid',
     properties: [
         'columns: columns',
         'rows: rows'
-    ]
-})
-
-@View({
+    ],
     template: `
     <div>
         <table class="table">
             <thead>
                 <tr>
-                    <th *ng-for="#column of columns">
+                    <th *ngFor="let column of columns">
                         {{column}}
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ng-for="#row of rows">
-                    <td *ng-for="#column of columns">
+                <tr *ngFor="let row of rows">
+                    <td *ngFor="let column of columns">
                         {{row[column]}}
                     </td>
                 </tr>
@@ -29,7 +26,6 @@ import {Component, View, NgFor} from 'angular2/angular2';
         </table>
 	</div>
     `,
-    directives: [NgFor]
 })
 
 export class Grid {

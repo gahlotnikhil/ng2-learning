@@ -1,5 +1,4 @@
-import {TaskSubjectModel} from 'js/model/TaskSubjectModel';
-import {Inject} from 'angular2/angular2';
+import {TaskSubjectModel} from '../model/TaskSubjectModel';
 
 export class TaskService {
   tasks: Array<string>;

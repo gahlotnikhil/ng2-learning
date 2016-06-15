@@ -1,4 +1,5 @@
-import {Inject, Directive, ElementRef} from 'angular2/angular2';
+import {Inject, Directive, ElementRef} from '@angular/core';
+declare var jQuery:any;
 
 @Directive({
     selector: '[class]',

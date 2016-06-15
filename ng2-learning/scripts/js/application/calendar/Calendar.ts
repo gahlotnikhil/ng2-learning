@@ -1,10 +1,8 @@
-import {Component, View, Inject, ElementRef} from 'angular2/angular2';
+import {Component, Inject, ElementRef, OnInit} from '@angular/core';
+declare var jQuery:any;
 
 @Component({
-    selector: 'calendar'
-})
-
-@View({
+    selector: 'calendar',
     template: `
     
     <div>
@@ -16,15 +14,19 @@ import {Component, View, Inject, ElementRef} from 'angular2/angular2';
     `
 })
 
-export class Calendar {
+export class Calendar implements OnInit{
     private calendarElem: ElementRef;
 
     constructor(@Inject(ElementRef) elementRef: ElementRef) {
-        var el = jQuery(elementRef.nativeElement);
+        //var el = jQuery(elementRef.nativeElement);
 
-        this.calendarElem = el.find('#calendar');
+        this.calendarElem = elementRef;
 
-        this.calendarElem.fullCalendar({
+        
+    }
+
+    ngOnInit() {
+        jQuery(this.calendarElem.nativeElement)['fullCalendar']({
             header: {
                 left: 'prev,next today',
                 center: 'title',

@@ -1,15 +1,12 @@
-import {Host, Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
-import {TaskSubjectsView} from 'js/application/todo/TaskSubjectsView';
-import {Sortable} from 'js/widget/Sortable';
+import {Host, Component} from '@angular/core';
+import {TaskSubjectsView} from '../../application/todo/TaskSubjectsView';
+import {Sortable} from '../../widget/Sortable';
 
 
 @Component({
   selector: 'task-subject',
-  //bindings: [TaskSubjectsView]
-})
-@View({
-  templateUrl: '../html/application/todo/task.html',
-  directives: [NgFor, NgIf, Sortable]
+  //bindings: [TaskSubjectsView],
+  templateUrl: '/client/html/application/todo/task.html'
 })
 
 // Component controller
@@ -32,7 +29,7 @@ export class TaskView {
   removeTask(todo: string) {
     for (var index in this.tasks) {
       if (todo == this.tasks[index]) {
-        this.tasks.splice(index, 1);
+        this.tasks.splice(parseInt(index), 1);
       }
     }
   }

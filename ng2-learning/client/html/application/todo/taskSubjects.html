@@ -1,9 +1,9 @@
-<div *ng-if="!showTaskView" class="container">
+<div *ngIf="!showTaskView" class="container">
 	<h4>Task Subject list: </h4>
 	<div class="row show-grid">
 		<div class="col-sm-8">
 			<ul class="list-group">
-				<li *ng-for="#subject of subjects" class="list-group-item">
+				<li *ngFor="let subject of subjects" class="list-group-item">
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-md-11">
@@ -23,7 +23,7 @@
 	</div>
 </div>
 
-<div *ng-if="showTaskView">
+<div *ngIf="showTaskView">
 	<div>
 		<a class="link" (click)="goBack()">
 			<span class="glyphicon glyphicon-step-backward"></span>

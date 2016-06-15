@@ -1,4 +1,5 @@
-import {LifecycleEvent, EventEmitter, Component, View, Inject, ElementRef} from 'angular2/angular2';
+import {OnInit, EventEmitter, Component, Inject, ElementRef, Output} from '@angular/core';
+declare var jQuery:any;
 
 @Component({
     selector: 'ng2-dialog',
@@ -7,12 +8,8 @@ import {LifecycleEvent, EventEmitter, Component, View, Inject, ElementRef} from 
         'title: title',
         'config: config'
     ],
-    events: ['onCloseFn: onClose'],
-    viewBindings: [EventEmitter],
-    lifecycle: [LifecycleEvent.onInit]
-})
-
-@View({
+    //events: ['onCloseFn: onClose'],
+    //viewBindings: [EventEmitter],
     template: `
     <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -47,34 +44,36 @@ import {LifecycleEvent, EventEmitter, Component, View, Inject, ElementRef} from 
     `
 })
 
-export class Dialog {
+export class Dialog implements OnInit{
     title: string;
     private _show: boolean;
 
-    private dialogElem: ElementRef;
+    private dialogElem: any;
+
+    @Output('onClose') 
+    private onCloseFn: EventEmitter<any> = new EventEmitter();
 
     config;
 
-    constructor(@Inject(ElementRef) elementRef: ElementRef, @Inject(EventEmitter) _closeFn: EventEmitter) {
+    constructor(@Inject(ElementRef) elementRef: ElementRef) {
         //this.title = "Some Dialog";
-        this.onCloseFn = _closeFn;
 
-        var el = jQuery(elementRef.nativeElement);
+        this.dialogElem = elementRef;
+        
+    }
+
+    ngOnInit() {
+        var el = jQuery(this.dialogElem.nativeElement);
         el.addClass('center-block');
 
         this.dialogElem = el.find('#modal');
 
-        this.dialogElem.modal({
+        this.dialogElem['modal']({
             keyboard: false,
             backdrop: true,
             show: false
         });
 
-        
-        
-    }
-
-    onInit() {
         if (this.config != undefined) {
             this.config['open'] = () => {
                 this.openAction();
@@ -98,7 +97,7 @@ export class Dialog {
 
     openAction() {
         //this.show = true;
-        this.dialogElem.modal('show');
+        this.dialogElem['modal']('show');
     }
 
     confirmAction() {
@@ -107,9 +106,10 @@ export class Dialog {
     }
 
     cancelAction() {
-        this.dialogElem.modal('hide');
-
-        this.onCloseFn.next();
+        if (this.dialogElem['modal']) {
+            this.dialogElem['modal']('hide');
+        }
+        this.onCloseFn.next(true);
     }
 
     

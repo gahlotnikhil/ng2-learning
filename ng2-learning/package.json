@@ -2,24 +2,43 @@
   "name": "learning_ng2",
   "version": "1.0.0",
   "description": "A project to learn angular 2.0.",
-  "main": "client/app.js",
-  "dependencies": {
-    "bootstrap": "^3.3.5",
-    "express": "^4.13.1",
-    "fullcalendar": "^2.3.1",
-    "gulp": "^3.9.0",
-    "gulp-tsd": "0.0.4",
-    "http": "0.0.0",
-    "http-server": "^0.8.0",
-    "jquery": "^2.1.4",
-    "jquery-ui": "^1.10.5",
-    "tsd": "^0.6.3",
-    "typescript": "^1.5.3"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "lite": "lite-server",
+    "postinstall": "typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings"
   },
-  "author": "gahlotnikhil",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.1",
+    "@angular/compiler": "2.0.0-rc.1",
+    "@angular/core": "2.0.0-rc.1",
+    "@angular/http": "2.0.0-rc.1",
+    "@angular/platform-browser": "2.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.1",
+    "@angular/router": "2.0.0-rc.1",
+    "@angular/router-deprecated": "2.0.0-rc.1",
+    "@angular/upgrade": "2.0.0-rc.1",
+    "angular2-in-memory-web-api": "0.0.11",
+    "bootstrap": "^3.3.5",
+    "core-js": "^2.4.0",
+    "fullcalendar": "^2.3.1",
+    "jquery": "2.2.4",
+    "jquery-ui": "^1.10.5",
+    "moment": "2.10.6",
+    "reflect-metadata": "^0.1.3",
+    "require": "^2.4.20",
+    "rxjs": "5.0.0-beta.6",
+    "systemjs": "0.19.27",
+    "zone.js": "^0.6.12"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.2.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4"
+  },
+  "author": "gahlotnikhil"
 }

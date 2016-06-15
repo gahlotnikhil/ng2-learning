@@ -1,28 +1,25 @@
-import {Inject, Component, View, NgFor} from 'angular2/angular2';
-import {routerInjectables, LocationStrategy, HashLocationStrategy, RouteRegistry} from 'angular2/router';
-import {RootRouter, Pipeline, RouterLink, RouteConfig, Router, RouterOutlet, Location, RouteParams} from 'angular2/router';
-import {NavigationService} from 'js/service/NavigationService';
-import {Http, httpInjectables} from 'angular2/http';
-import {RouteItem} from 'js/model/RouteItem';
+import {Inject, Component} from '@angular/core';
+import {NavigationService} from '../service/NavigationService';
+import {Location} from '@angular/common';
+import {RouterLink, RouteConfig, Router, RouterOutlet, RouteParams} from '@angular/router-deprecated';
+import {Http} from '@angular/http';
+import {RouteItem} from '../model/RouteItem';
 
 @Component({
     selector: 'menu',
-    properties: ['items']
-})
-
-@View({
+    properties: ['items'],
     template: `
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                <li *ng-for="#item of items" [class.active]="isSelected(item.path)" style="margin: 5px;">
-                    <a [router-link]="getLink(item.as)" class="link">{{item.label}}</a>
+                <li *ngFor="let item of items" [class.active]="isSelected(item.path)" style="margin: 5px;">
+                    <a [routerLink]="getLink(item.as)" class="link">{{item.label}}</a>
                 </li>
                 </ul>
             </div>
         </nav>
     `,
-    directives: [RouterLink, RouterOutlet, NgFor]
+    directives: [RouterLink, RouterOutlet]
 })
 
 export class Menu {

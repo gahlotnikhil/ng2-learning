@@ -2,7 +2,7 @@
 	<h2>{{ name }}</h2>
 		
 	<ul class="list-group" sortable (on-sort)="onSortFn($event)">
-		<li *ng-for="#todo of tasks" class="list-group-item task">
+		<li *ngFor="let todo of tasks" class="list-group-item task">
 			<div class="row">
 				<div class="col-md-1">
 					<i class="glyphicon glyphicon-ok"></i>

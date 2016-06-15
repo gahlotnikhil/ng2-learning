@@ -1,19 +1,19 @@
-import {Home} from 'js/home/Home';
+import {Home} from '../home/Home';
 
-import {About} from 'js/home/About';
+import {About} from '../home/About';
 
-import {Applications} from 'js/application/Applications';
-import {ToDo} from 'js/application/todo/ToDo';
-import {Calendar} from 'js/application/calendar/Calendar';
+import {Applications} from '../application/Applications';
+import {ToDo} from '../application/todo/ToDo';
+import {Calendar} from '../application/calendar/Calendar';
 
-import {Forms} from 'js/form/Forms';
-import {FormExample1} from 'js/form/FormExample1';
+import {Forms} from '../form/Forms';
+import {FormExample1} from '../form/FormExample1';
 
-import {Showcase} from 'js/showcase/Showcase';
-import {DialogComponent} from 'js/showcase/DialogComponent';
-import {GridComponent} from 'js/showcase/GridComponent';
-import {ListComponent} from 'js/showcase/ListComponent';
-import {SubMenu2} from 'js/showcase/SubMenu2';
+import {Showcase} from '../showcase/Showcase';
+import {DialogComponent} from '../showcase/DialogComponent';
+import {GridComponent} from '../showcase/GridComponent';
+import {ListComponent} from '../showcase/ListComponent';
+import {SubMenu2} from '../showcase/SubMenu2';
 
 export class AllComponents {
     static components = {

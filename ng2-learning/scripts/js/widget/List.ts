@@ -1,14 +1,11 @@
-import {Component, View, bootstrap, NgFor, Inject, ElementRef, ComponentRef} from 'angular2/angular2';
+import {Component, Inject, ElementRef, ComponentRef} from '@angular/core';
 
 @Component({
     selector: 'list',
     // properties: ['listItems: list-items'],
     // host: { 'itemVar': 'itemVar'}
     //viewBindings: [ComponentRef],
-})
-
-@View({
-	//templateUrl: '../html/widget/list.html',
+    //templateUrl: '../html/widget/list.html',
 		template: `
     <div class="container">
 	    <p>
@@ -16,7 +13,6 @@ import {Component, View, bootstrap, NgFor, Inject, ElementRef, ComponentRef} fro
 	    </p>
 	</div>
     `,
-    directives: [NgFor]
 })
 export class List {
 	

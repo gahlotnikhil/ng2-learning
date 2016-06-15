@@ -1,14 +1,11 @@
-import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
-import {TaskSubjectModel} from 'js/model/TaskSubjectModel';
-import {TaskService} from 'js/service/TaskService';
+import {Component} from '@angular/core';
+import {TaskSubjectModel} from '../../model/TaskSubjectModel';
+import {TaskService} from '../../service/TaskService';
 
 @Component({
   selector: 'task-subjects',
-  bindings: [TaskService]
-})
-@View({
-  templateUrl: '../html/application/todo/taskSubjects.html',
-  directives: [NgFor, NgIf]
+  bindings: [TaskService],
+  templateUrl: '/client/html/application/todo/taskSubjects.html'
 })
 
 export class TaskSubjectsView {
@@ -29,7 +26,7 @@ export class TaskSubjectsView {
   removeSubject(subject: TaskSubjectModel) {
     for (var index in this.subjects) {
       if (subject.name == this.subjects[index].name) {
-        this.subjects.splice(index, 1);
+        this.subjects.splice(parseInt(index), 1);
       }
     }
   }

@@ -1,18 +1,19 @@
-import {Inject} from 'angular2/angular2';
-import {Http, httpInjectables} from 'angular2/http';
-import {AllComponents} from 'js/route/AllComponents';
-import {RouteItem} from 'js/model/RouteItem';
-import {RouteComponent} from 'js/route/RouteComponent';
-import {Promise} from 'angular2/src/facade/async';
-import { Injector } from 'angular2/di';
+import {Inject} from '@angular/core';
+import {Http} from '@angular/http';
+import {AllComponents} from '../route/AllComponents';
+import {RouteItem} from '../model/RouteItem';
+import {RouteComponent} from '../route/RouteComponent';
+import {Observable} from 'rxjs/Observable';
 
 export class NavigationService {
   http: Http;
   configData: Array<RouteItem>;
 
+  private obs: Observable<Array<number>>;
+
   static instance: NavigationService;
   static isCreating: Boolean = false;
-  static URL = '../json/menu.json';
+  static URL = 'client/json/menu.json';
 
   constructor( @Inject(Http) http: Http) {
     this.http = http;
@@ -59,11 +60,13 @@ export class NavigationService {
   }
 
   loadConfigData() {
-    return new Promise((resolve) => {
+
+    return new Observable((observer) => {
       if (this.configData) {
-        resolve(this.configData);
+        observer.next(this.configData);
+        observer.complete();
       } else {
-        this.http.get(NavigationService.URL).toRx().subscribe((res) => {
+        this.http.get(NavigationService.URL).subscribe((res) => {
           var arr = res.json();
           this.configData = [];
           arr.forEach(item => {
@@ -85,7 +88,8 @@ export class NavigationService {
 
             this.configData.push(this.transformToRouteItem(configObj, item['sub-menu']))
           })
-          resolve(this.configData);
+          observer.next(this.configData);
+          observer.complete();
         });
       }
     });

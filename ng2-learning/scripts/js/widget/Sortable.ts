@@ -1,4 +1,5 @@
-import {EventEmitter, Inject, Directive, ElementRef} from 'angular2/angular2';
+import {EventEmitter, Inject, Directive, ElementRef} from '@angular/core';
+declare var jQuery:any;
 
 @Directive({
 	selector: '[sortable]',
@@ -7,11 +8,11 @@ import {EventEmitter, Inject, Directive, ElementRef} from 'angular2/angular2';
 })
 
 export class Sortable {
-	private el: ElementRef;
-	private sortFn: EventEmitter;
+	private el;
+	private sortFn: EventEmitter<any>;
 
     constructor( @Inject(ElementRef) elementRef: ElementRef, 
-		@Inject(EventEmitter) _sortFn: EventEmitter) {
+		@Inject(EventEmitter) _sortFn: EventEmitter<any>) {
 		var self = this;
 		this.sortFn = _sortFn;
 		this.el = jQuery(elementRef.nativeElement);

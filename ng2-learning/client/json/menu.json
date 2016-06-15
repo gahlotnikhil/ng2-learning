@@ -2,31 +2,31 @@
 	{
 		"component": "home",
 		"path": "/",
-		"as": "home",
+		"as": "Home",
 		"label": "Home"
 	},
 	{
 		"component": "showcase",
 		"path": "/showcase/...",
-		"as": "showcase",
+		"as": "Showcase",
 		"label": "Showcase",
 		"sub-menu": [
         	{
 				"path": "/gridComponent",
 				"component": "gridComponent",
-				"as": "gridComponent",
+				"as": "GridComponent",
 				"label": "Grid Component"
 			},
 			{
 				"path": "/listComponent",
 				"component": "listComponent",
-				"as": "listComponent",
+				"as": "ListComponent",
 				"label": "List Component"
 			},
 			{
 				"path": "/dialogComponent",
 				"component": "dialogComponent",
-				"as": "dialogComponent",
+				"as": "DialogComponent",
 				"label": "Dialog Component"
 			}
 		]
@@ -34,19 +34,19 @@
 	{
 		"component": "applications",
 		"path": "/applications/...",
-		"as": "applications",
+		"as": "Applications",
 		"label": "Applications",
 		"sub-menu": [
 			{
 	            "component": "calendar",
 	            "path": "/calendar",
-	            "as": "calendar",
+	            "as": "Calendar",
 				"label": "Calendar"
         	},
         	{
 	            "component": "todo",
 	            "path": "/todo",
-	            "as": "todo",
+	            "as": "Todo",
 				"label": "Todo"
         	}
 		]
@@ -54,13 +54,13 @@
 	{
 		"component": "forms",
 		"path": "/forms/...",
-		"as": "forms",
+		"as": "Forms",
 		"label": "Forms",
 		"sub-menu": [
 			{
 	            "component": "formExample1",
 	            "path": "/formExample1",
-	            "as": "formExample1",
+	            "as": "FormExample1",
 				"label": "Form Example 1"
         	}
 		]
@@ -68,7 +68,7 @@
 	{
 		"component": "about",
 		"path": "/about",
-		"as": "about",
+		"as": "About",
 		"label": "About"
 	}
 ]

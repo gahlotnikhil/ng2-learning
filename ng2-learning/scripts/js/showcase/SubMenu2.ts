@@ -1,10 +1,7 @@
-import {Component, View} from 'angular2/angular2';
+import {Component} from '@angular/core';
 
 @Component({
-    selector: 'sub-menu2'
-})
-
-@View({
+    selector: 'sub-menu2',
     template: `
     <div class="container">
 	    <p>

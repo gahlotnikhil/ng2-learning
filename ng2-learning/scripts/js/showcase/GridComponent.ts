@@ -1,11 +1,8 @@
-import {Component, View} from 'angular2/angular2';
-import {Grid} from 'js/widget/Grid';
+import {Component} from '@angular/core';
+import {Grid} from '../widget/Grid';
 
 @Component({
     selector: 'grid-component',
-})
-
-@View({
     template: `
     <div class="container">
         <p>Grid component:</p>

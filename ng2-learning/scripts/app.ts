@@ -1,18 +1,21 @@
-import {Component, View, bootstrap, For, bind, Inject, NgIf} from 'angular2/angular2';
-import {routerInjectables, LocationStrategy, HashLocationStrategy, RouteRegistry} from 'angular2/router';
-import {RootRouter, Pipeline, RouterLink, RouteConfig, Router, RouterOutlet, Location, RouteParams} from 'angular2/router';
-import {Http, httpInjectables} from 'angular2/http';
-import {AllComponents} from 'js/route/AllComponents';
-import {RouteItem} from 'js/model/RouteItem';
-import {Menu} from 'js/route/Menu';
-import {NavigationService} from 'js/service/NavigationService';
+import { bootstrap }    from '@angular/platform-browser-dynamic';
+import {Component, bind, Inject} from '@angular/core';
+import {LocationStrategy, HashLocationStrategy, Location, CORE_DIRECTIVES} from '@angular/common';
+import {RouteRegistry} from '@angular/router-deprecated';
+
+import {RouterLink, RouteConfig, Router, RouterOutlet, RouteParams, ROUTER_PROVIDERS} from '@angular/router-deprecated';
+import {Http, HTTP_PROVIDERS} from '@angular/http';
+import {AllComponents} from './js/route/AllComponents';
+import {RouteItem} from './js/model/RouteItem';
+import {Menu} from './js/route/Menu';
+import {NavigationService} from './js/service/NavigationService';
+
+
 
 @Component({
   selector: 'my-app',
-})
-@View({
-	templateUrl: '../html/app.html',
-	directives: [RouterLink, RouterOutlet, NgIf, Menu]
+  templateUrl: 'client/html/app.html',
+  directives: [RouterLink, RouterOutlet, Menu]
 })
 
 class TaskAppComponent {
@@ -20,6 +23,7 @@ class TaskAppComponent {
     location: Location;
     ready: boolean;
     menuItems: Array<RouteItem>;
+	//constructor(router: Router ) {
     constructor( @Inject(Router) router: Router, @Inject(Location) location: Location, 
 		@Inject(RouteRegistry) registry: RouteRegistry, @Inject(NavigationService) navigationService: NavigationService) {
         this.router = router;
@@ -27,7 +31,8 @@ class TaskAppComponent {
         this.ready = false;
         this.menuItems = [];
 
-        navigationService.loadConfigData().then((data: Array<RouteItem>) => {
+		navigationService.loadConfigData().subscribe(
+          (data: Array<RouteItem>) => {
 
 			var confData = [];
 
@@ -58,7 +63,7 @@ class TaskAppComponent {
 						"component": child.component,
 						"path": child.path,
 						"as": child.as,
-					}, false);
+					});
 				});
 				var rlink = item.as;
 				var rpath = item.path;
@@ -78,5 +83,7 @@ class TaskAppComponent {
     }
 }
 
-bootstrap(TaskAppComponent, [NavigationService, AllComponents, httpInjectables, routerInjectables, bind(LocationStrategy).toClass(HashLocationStrategy)]);
+bootstrap(TaskAppComponent, [ROUTER_PROVIDERS, HTTP_PROVIDERS, CORE_DIRECTIVES, NavigationService, AllComponents, bind(LocationStrategy).toClass(HashLocationStrategy)]);
+
+// bootstrap(TaskAppComponent, [NavigationService, AllComponents, httpInjectables, routerInjectables, bind(LocationStrategy).toClass(HashLocationStrategy)]);
 

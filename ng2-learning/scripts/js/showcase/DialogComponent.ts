@@ -1,13 +1,10 @@
-import {Component, View} from 'angular2/angular2';
-import {Query, QueryList} from 'angular2/angular2';
-import {Dialog} from 'js/widget/Dialog';
+import {Component} from '@angular/core';
+import {Query, QueryList} from '@angular/core';
+import {Dialog} from '../widget/Dialog';
 
 
 @Component({
-    selector: 'dialog-component'
-})
-
-@View({
+    selector: 'dialog-component',
     template: `
     <div class="container">
         <p>Dialog component:</p>
@@ -20,7 +17,7 @@ import {Dialog} from 'js/widget/Dialog';
 
         <div>
             <a (click)="openDialog2()" class="link"> Open Dialog 2</a>
-            <ng2-dialog [show]="showDialog" title="Dialog 2" (on-close)="onDialog2Close($event)">
+            <ng2-dialog [show]="showDialog" title="Dialog 2" (onClose)="onDialog2Close($event)">
                 body here
             </ng2-dialog>
         </div>
@@ -32,10 +29,12 @@ import {Dialog} from 'js/widget/Dialog';
 export class DialogComponent {
     showDialog: boolean;
     dialogConfig;
+    dialogTitle = null;
 
     constructor() {
         this.dialogConfig = {};
         this.dialogTitle = 'Dialog 1';
+        this.showDialog =false;
     }
 
     openDialog1() {

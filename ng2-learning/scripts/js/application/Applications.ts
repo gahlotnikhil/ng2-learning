@@ -1,18 +1,14 @@
-import {Inject, Component, View} from 'angular2/angular2';
-import {routerInjectables, LocationStrategy, HashLocationStrategy, RouteRegistry} from 'angular2/router';
-import {RootRouter, Pipeline, RouterLink, RouteConfig, Router, RouterOutlet, Location, RouteParams} from 'angular2/router';
-import {NavigationService} from 'js/service/NavigationService';
-import {Http, httpInjectables} from 'angular2/http';
-import {RouteItem} from 'js/model/RouteItem';
-import {RouteComponent} from 'js/route/RouteComponent'
-import {SubMenu} from 'js/route/SubMenu';
+import {Inject, Component} from '@angular/core';
+import {NavigationService} from '../service/NavigationService';
+import {Http} from '@angular/http';
+import {RouteItem} from '../model/RouteItem';
+import {RouteComponent} from '../route/RouteComponent'
+import {SubMenu} from '../route/SubMenu';
+import {RouterLink, RouteConfig, Router, RouterOutlet, RouteParams} from '@angular/router-deprecated';
 
 @Component({
     selector: 'applications',
-})
-
-@View({
-    templateUrl: '../html/applications.html',
+    templateUrl: '/client/html/applications.html',
     directives: [RouterLink, RouterOutlet, SubMenu]
 })
 
