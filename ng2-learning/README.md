@@ -1,10 +1,8 @@
 Angular 2.0 learning project
 =============================
 
-1.  Install
-	*  chmod 777 ./install.sh (unix/mac)
-	*  ./install.sh (unix/mac)
-	*  ./install.bat (windows)
+1.  Build
+	*  npm run build
 
 2.  Start Type script compiler
 	*  npm run tsc

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A project to learn angular 2.0.",
   "scripts": {
+    "build": "npm install && npm run typings install",
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
     "postinstall": "typings install",
